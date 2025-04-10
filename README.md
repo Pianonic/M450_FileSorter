@@ -1,5 +1,5 @@
 <p align="center"> 
-    <img src="assets/file-sorter-logo.png" width="600" alt="File Sorter Logo"> 
+    <img src="assets/file-sorter-logo.png" width="200" alt="File Sorter Logo"> 
 </p>
 <p align="center">
     <strong>File Sorter</strong> - YAML & Regex-driven automated file organization
@@ -15,9 +15,7 @@
 
 ## 🚀 What is File Sorter?
 
-File Sorter monitors specified directories and automatically organizes files based on user-defined rules configured in a simple YAML file. It leverages the power of regular expressions and file metadata to move files exactly where you want them.
-
-Designed following TDD and SOLID principles for robustness and extensibility.
+File Sorter monitors specified directories and automatically organizes files based on user-defined rules configured in a simple YAML file.
 
 ## 🖼️ Screenshots
 
