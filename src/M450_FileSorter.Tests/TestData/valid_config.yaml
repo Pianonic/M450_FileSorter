@@ -1,0 +1,16 @@
+source_directories:
+  - ./Source1
+  - /absolute/path/Source2
+rules:
+  - name: "Rule1"
+    type: creation_date
+    params:
+      pattern: '\.txt$'
+    target: ./Target/TextFiles/{yyyy}/
+  - name: "Rule2"
+    type: regex
+    params:
+      pattern: '^IMG_(\d+)\.jpg$'
+    target: ./Target/Images/Raw/{$1}/
+conflict_resolution: first_match
+simulation_mode: false

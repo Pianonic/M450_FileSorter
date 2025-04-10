@@ -1,0 +1,6 @@
+source_directories:
+  - ./Source
+rules:
+  - name: "BadRule"
+    type: creation_date
+   target: ./Target # Fehlende Einrückung
