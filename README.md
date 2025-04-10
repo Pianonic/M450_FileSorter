@@ -1,5 +1,5 @@
 <p align="center"> 
-    <img src="assets/file-sorter-logo.png" width="600" alt="File Sorter Logo"> 
+    <img src="assets/file-sorter-logo.png" width="200" alt="File Sorter Logo"> 
 </p>
 <p align="center">
     <strong>File Sorter</strong> - YAML & Regex-driven automated file organization
