@@ -1,0 +1,14 @@
+source_directories:
+  - ./Source
+rules:
+  - name: "RuleA"
+    type: regex
+    params:
+      pattern: '\.log$'
+    target: ./Target/Logs/ # Gleiches Ziel
+  - name: "RuleB"
+    type: file_size
+    params:
+      min_size_mb: 1
+    target: ./Target/Logs/ # Gleiches Ziel
+conflict_resolution: error

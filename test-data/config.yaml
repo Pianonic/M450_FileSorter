@@ -1,0 +1,40 @@
+source_directories:
+  - ./ToSort # Beispiel: Ein Unterordner im Ausführungsverzeichnis
+  #- /Users/deinName/Downloads # Absoluter Pfad Beispiel
+
+rules:
+  - name: "Bilder nach Jahr/Monat (Erstellung)"
+    type: creation_date
+    params:
+      pattern: '\.(jpg|jpeg|png|gif)$' # Nur Bilddateien
+    target: ./Sorted/Images/{yyyy}/{MM}/ # Relativer Pfad Beispiel
+
+  - name: "PDF Rechnungen (Regex)"
+    type: regex
+    params:
+      pattern: '^(Rechnung|Invoice)_(\d{4})-(\d{2})-\d{2}.*\.pdf$'
+    target: ./Sorted/Invoices/{$2}/{$3}/ # {$2} = Jahr, {$3} = Monat
+
+  - name: "Grosse Dateien (> 10MB)"
+    type: file_size
+    params:
+      min_size_mb: 10
+    target: ./Sorted/LargeFiles/
+
+  - name: "Alle anderen PDFs" # Potenzielle Konfliktregel
+    type: regex
+    params:
+      pattern: '\.pdf$'
+    target: ./Sorted/PDF_Archive/ # Gleiches Ziel wie Rechnungen? Nein, anderes.
+
+  - name: "Dokumente (Letzte Änderung < 30 Tage)"
+    type: last_modified_date
+    params:
+      pattern: '\.(docx|txt)$'
+      newer_than_days: 30
+    target: ./Sorted/RecentDocs/{yyyy}-{MM}/
+
+conflict_resolution: first_match # Optionen: first_match, error, skip, log
+
+# Optional:
+# simulation_mode: true
