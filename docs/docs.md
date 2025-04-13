@@ -97,7 +97,6 @@ Sorts by file last modified date.
 
 -   **Specific `params`:**
     -   `newer_than_days`: (Optional) Integer. File must be modified within this many days (inclusive).
-    -   *(Note: `older_than_days` is NOT implemented)*
 -   **Placeholders:** `{yyyy}`, `{MM}`, `{dd}` (from last modified date).
 -   **Example:**
     ```yaml
@@ -152,7 +151,7 @@ Sorts if filename matches the main Regex pattern. Can use parts of the filename 
 ### Example Configuration
 
 ```yaml
-# config.yaml (Example using only implemented features)
+# config.yaml
 source_directories:
   - ./ToSort
 conflict_resolution: first_match
